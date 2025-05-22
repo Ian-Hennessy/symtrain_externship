@@ -39,25 +39,4 @@ def extract_layout(dir_path: str, model: Parser)->List[Tuple[str, int, int, int,
             logger.warning("Parsing failed for %s, %s", full_path, e)
             continue
         
-        # load image to get dims
-        img = cv2.imread(full_path)
-        if img is None:
-            raise FileNotFoundError(f"Could not read image at path: {full_path}")
-        
-        height, width, _ = img.shape
-
-        # convert normalized bboxes 
-        for e in elements:
-            # finalize feature extraction by denormalizing and retrieving type
-            x1, y1, x2, y2 = e['bbox']
-            px = int(x1 * width)
-            py = int(y1 * height)
-            pw = int((x2 - x1) * width)
-            ph = int((y2 - y1) * height)
-            feat_type = "text" if e.get("content","").strip() else "icon"
-            # append to results 
-            results.append((feat_type, px, py, pw, ph))
-    
-    return results
-    
-
+        # load image to g
