@@ -27,7 +27,7 @@ def extract_layout(dir_path: str, model: Parser)->List[Tuple[str, int, int, int,
     # Loop through each file in the directory
     for fname in os.listdir(dir_path): 
         # omniparser can only handle .png images
-        if not fname.lower().endswith(".png"):
+        if not fname.lower().endswith(".png") or not fname.lower().endswith(".jpg"):
             continue
         full_path = os.path.join(dir_path, fname)
 
