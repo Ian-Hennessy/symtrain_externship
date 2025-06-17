@@ -18,7 +18,7 @@ def generate_prompt(features: List[Tuple[str, int, int, int, int]], canvas = (10
     prompt = (
         "Context:\n"
         "You are a code generator that produces a complete, runnable UI mockup as HTML/CSS (no explanations)."
-        " This mockup will be used as a sandbox tutorial for call center trainees.\n\n"
+        "This mockup will be used as a sandbox tutorial for call center trainees.\n\n"
         "Requirements:\n"
         f"- Canvas size: {canvas[0]}×{canvas[1]} px.\n"
         "- Use CSS Grid or Flexbox to position elements.\n"
