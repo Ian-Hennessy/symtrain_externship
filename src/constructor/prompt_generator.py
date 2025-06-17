@@ -15,14 +15,18 @@ def generate_prompt(features: List[Tuple[str, int, int, int, int]], canvas = (10
     Returns:
         A string prompt for code generation.
     """
-    prompt = (
+    prompt = str(
         "Context:\n"
         "You are a code generator that produces a complete, runnable UI mockup as HTML/CSS (no explanations)."
         "This mockup will be used as a sandbox tutorial for call center trainees.\n\n"
+        "Return a complete HTML/CSS mockup based on the following features.\n"
         "Requirements:\n"
-        f"- Canvas size: {canvas[0]}×{canvas[1]} px.\n"
+        f"- Canvas size: {canvas[0]}×{canvas[1]} px. Coordinates are in pixels with the origin at the top-left corner.\n"
         "- Use CSS Grid or Flexbox to position elements.\n"
         "- Map each feature to a semantic HTML element with styling.\n"
+        "Map feature_type='button' to <button>, feature_type='text' to <p> or <input type='text'> as appropriate.\n"
+        "You don't need colors or fonts—focus on positioning and basic borders. \n"
+        "Respond only with a single markdown code block labeled html."
         "- Return only code (HTML, CSS, JS if needed).\n\n"
         "Elements:\n"
     )
