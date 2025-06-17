@@ -1,0 +1,8 @@
+TODO for Feature Extraction Module: 
+    - Additional Features: 
+        - Mouse location and tracking feature to inform model's tagging of specific features and their function 
+            - Listener for when a new frame is reached -> record mouse location and notate something like "switches to page x"
+        - Audio-to-text model to take in recording of customer interaction and inform feature tagging
+    - Rigorous testing of layout extractor 
+    - Custom training loop for specific or more commonly visited pages, or even purpose-built omniparser models for 
+    customers based on their webpages 
