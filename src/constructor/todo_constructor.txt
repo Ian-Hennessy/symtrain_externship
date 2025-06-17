@@ -1,0 +1,4 @@
+TODO for Constructor Module:
+
+    - Find most efficient approach for generating the html/CSS mockups 
+    - Continue to refine prompt engineering for effective and efficient generation of the mockups 

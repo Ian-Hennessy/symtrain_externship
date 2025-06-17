@@ -1,0 +1,5 @@
+TODO for Renderer Module: 
+
+    - Ensure rendering is quick, painless, and interactive 
+    - Test for failures at extraction of HTML, writing to file, rendering the page, etc.
+    
