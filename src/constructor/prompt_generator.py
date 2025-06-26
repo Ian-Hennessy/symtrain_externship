@@ -2,7 +2,9 @@
 Take a list of tuples containing (feature_type, x, y, width, height) and convert them into a string prompt for 
 a code-generation model. They should be specific, concise, and direct. 
 """
+import os 
 from typing import List, Tuple
+from openai import OpenAI
 
 
 def generate_prompt(features: List[Tuple[str, int, int, int, int]], canvas = (1024, 768)) -> str:
@@ -37,3 +39,32 @@ def generate_prompt(features: List[Tuple[str, int, int, int, int]], canvas = (10
     
     return prompt
 
+def html_generator(prompt: str) -> str:
+    """
+    Send prompt to GPT instance using OpenAI API. Return generated code and write 
+    to .html file for serving to the frontend renderer 
+    """
+
+    # placeholder for openAI api key 
+    key = "placeholder"
+
+    # establish client 
+    client = OpenAI(key)
+
+    # send prompt to model for html generation 
+    response = client.chat.completions.create(
+        model = "gpt-4o-mini",
+        input = prompt)
+
+    
+    # write generated response to .html file 
+    generated_html = response.choices[0].message.content.strip()
+    if not os.path.exists("demo/tests/"):
+        os.makedirs("demo/tests/")
+    html_file_path = "demo/tests/generated_mockup.html"
+    with open(html_file_path, 'w', encoding='utf-8') as f:
+        f.write(generated_html)
+
+
+
+    
