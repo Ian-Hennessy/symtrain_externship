@@ -36,3 +36,4 @@ def generate_prompt(features: List[Tuple[str, int, int, int, int]], canvas = (10
         prompt += f"- {feature_type} at ({x}, {y}), size ({width}x{height})\n"
     
     return prompt
+
