@@ -39,7 +39,7 @@ def generate_prompt(features: List[Tuple[str, int, int, int, int]], canvas = (10
     
     return prompt
 
-def html_generator(prompt: str) -> str:
+def html_generator(prompt: str) -> None:
     """
     Send prompt to GPT instance using OpenAI API. Return generated code and write 
     to .html file for serving to the frontend renderer 
